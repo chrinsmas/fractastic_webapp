@@ -1,10 +1,10 @@
 # fractastic
 LiftOff Group 7 Project
 
-Team members and github account
+Team Members:
 
-Grace: [chrinsmas](http://github.com/chrinsmas)
+  * Grace: [chrinsmas](http://github.com/chrinsmas)
+  * Keith: [qubitrot](http://github.com/qubitrot)
+  * Stacie: [stacima](http://github.com/staciema)
 
-Kieth: [qubitrot](http://github.com/qubitrot)
-
-Stacie: [l2mIam](http://github.com/l2mIam)
+Our teaching felow is Loren: [l2mIam](http://github.com/l2mIam)
