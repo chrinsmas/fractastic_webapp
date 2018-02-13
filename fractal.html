@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
      <link rel="stylesheet" type="text/css" href="style.css"></link>
-     <script src="mandelbrotset.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
      
 <body>
-     <div class="container">
      
-     <header>
-        <h1>Fractal Lab</h1>
-     </header>
-       
-     <nav>
-       <ul>
-         <li><a href="fractal.html">Home</a></li>
-         <li><a href="fractaldraw.html">Fractal Lab</a></li>
-         <li><a href="#">What is Fractal?</a></li>
-         <li><a href="fractalteam.html">Fractal Teams</a></li>
-       </ul>
-     </nav>
+     <div class="navbar">
+          <a href="fractal.html">Home</a>
+          
+          <div class="dropdown">
+               <button class="dropbtn" onclick="myFunction()">Fractals
+                    <i class="fa fa-caret-down"></i>
+               </button>
+               <div class="dropdown-content" id="myDropdown">
+                    <a href="mandelbrot.html">Mandelbrot</a>
+                    <a href="julia.html">Julia</a>
+                    <a href="tree_fractal.html">Tree</a>
+                    <a href="#">Triangle</a>
+               </div>
+          </div>
+          <a href="#">Fractal Wiki</a>
+          <a href="fractal_team.html">Fractal Team</a>
+     </div>
+
+     <script>
+     /* When the user clicks on the button, 
+     toggle between hiding and showing the dropdown content */
+     function myFunction() {
+         document.getElementById("myDropdown").classList.toggle("show");
+     }
+
+     // Close the dropdown if the user clicks outside of it
+     window.onclick = function(e) {
+       if (!e.target.matches('.dropbtn')) {
+         var myDropdown = document.getElementById("myDropdown");
+           if (myDropdown.classList.contains('show')) {
+             myDropdown.classList.remove('show');
+           }
+       }
+     }
+     </script>         
      
-     <article>
-       <h1>Who are we?</h1>
-       <p>We are Grace, Keith and Stacie. We are currently in Lift-off program from LanuchCode. Please check out our Github!</p>
-       <p><u>Github Links</u>:
-            <ul>
-                 <li><a href="#">Grace</a></li>
-                 <li><a href="#">Keith</a></li>
-                 <li><a href="#">Stacie</a></li>
-            </ul>
-       </p>
-       <p>special thanks to <a href="#">Loren</a> and <a href ="#">Ben</a> from <a href="https://www.launchcode.org/all-in-tech" target="_blank">Launch Code</a></p>
-       <img src="julia_set.jpg" alt="Julia">
-     </article>
-     
-     <footer>Credits: <a href="fractalteam.html">Fractal Team</a></footer>
-     
-     </div>     
+     <div class="bg"></div>
+   
 </body>
 </html>
