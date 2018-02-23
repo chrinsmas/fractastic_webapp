@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graphing Fractels</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script src="p5/p5.min.js"></script>
+    <script src="p5/p5.dom.min.js"></script>
+    <script src="tnt_fractals/sierpinski_triangle.js"></script>
+    <script src="tnt_fractals/sierpinski_triangle_sketch.js"></script>
+</head>
+
+<body id ="fractalbody">
+
+<div id="main">
+
+    <div class= "w3-sidebar w3-black w3-bar-block" >
+        <button class="w3-bar-item w3-button" onclick="generate()">Draw More</button>
+        <button class="w3-bar-item w3-button" onclick="resetSketch()">Reset</button>
+        <button class="w3-bar-item w3-button" onclick="saveImage()">Save</button>
+   </div>
+
+    <div class="w3-container" >
+        <div class="w3-bar w3-black" >
+            <a href="fractel.html" class="w3-bar-item w3-button w3-hide-small">Home</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-button w3-hide-small">Fractals</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
+                  <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
+                  <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
+                  <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
+                </div>
+            </div>
+            <a href="wiki.html" class="w3-bar-item w3-button w3-hide-small">Fractal Wiki</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small">Fractal Team</a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="myFunction(demo)">&#9776;</a>
+        </div>
+        <div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium" >
+            <a href="fractel.html" class="w3-bar-item w3-button">Home</a>
+            <div class="w3-dropdown-hover">
+                <button class="w3-button">Fractals</button>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
+                    <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
+                    <a href="tree.html" class="w3-bar-item w3-button">Tree</a>
+                    <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
+                </div>
+            </div>
+            <a href="wiki.html" class="w3-bar-item w3-button">Fractal Wiki</a>
+            <a href="fractal_team.html" class="w3-bar-item w3-button">Fractal Team</a>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+    function myFunction(demo) {
+        var x = document.getElementById("demo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+</html>
