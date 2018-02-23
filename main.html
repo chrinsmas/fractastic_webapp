@@ -1,0 +1,28 @@
+<head>
+    <meta content="text/html" charset="utf-8">
+</head>
+
+<select id="fractal_dropdown">
+    <option value="mandelbrot">Mandelbrot Set</option>
+    <option value="julia">Julia Set</option>
+</select>
+
+For Julia set, c =
+    <input type="text" id="c_real" value="-0.4">
++   <input type="text" id="c_imag" value="0.6"> i.
+
+<canvas id="fractal_canvas"></canvas>
+<script>
+    var canvas = document.getElementById("fractal_canvas");
+    canvas.width  = document.body.clientWidth;
+    canvas.height = document.body.clientHeight;
+    console.log("Canvas scaled to "+canvas.width+" x "+canvas.height)
+</script>
+
+<!-- Due to JS not having import/export support (at least until ES6)
+     we need to include every js file here in the correct order to
+     satisfy dependancies -->
+<script src="pwcp_fractals/pwcp_fractal.js"></script>
+<script src="pwcp_fractals/mandelbrot.js"></script>
+<script src="pwcp_fractals/julia.js"></script>
+<script src="main.js"></script>
