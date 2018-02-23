@@ -1,0 +1,142 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background-color: black;
+}
+
+#fractal_canvas.canvas{
+    height: 100%;
+    width: 100%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+.jscolor {
+    margin-left: 10%;
+    margin-right: 10%;
+    width:80%;
+    text-align: center;
+}
+.slider {
+    -webkit-appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-left: 4%;
+    margin-right: 4%;
+    width: 92%;
+    background: #939393;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    /*margin-top: 20px;*/
+}
+#sideBarFractal.w3-sidebar {
+    width:25%;
+    right:0;
+    margin:0;
+    top:0;
+    padding-top: 50px;
+}
+.w3-sidebar {
+    width:25%;
+    right:0;
+    margin:0;
+    top:0;
+    padding-top: 50px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    color:DodgerBlue;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.w3-container {
+    padding: 0;
+}
+.w3-sidebar p {
+    text-align: center;
+}
+#iterations.inputSize {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    align: "right";
+    text-align: right;
+}
+#fractal_dropdown.w3-select {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    align-content: center;
+    margin-bottom: 20px;
+    text-align: center;
+}
+#xQuantity.inputSize {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    align: "right";
+    text-align: right;
+}
+#inputs.w3-row{
+    margin-bottom: 10px;
+}
+#sideBarWiki.w3-sidebar {
+    width:25%;
+    right:0;
+    margin:0;
+    top:0;
+    padding-top: 90px;
+}
+#yQuantity.inputSize {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    align: "right";
+    text-align: right;
+}
+/*#canvasContainer.w3-container {*/
+    /*height: 100%;*/
+    /*width: 75%;*/
+    /*align: right;*/
+/*}*/
