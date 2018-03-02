@@ -257,3 +257,16 @@ img.question-image {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+#teamContainer.w3-container {
+    width: 90%;
+    padding: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+
+}
+body.homePage {
+    background: url(img/tree_fractal.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
