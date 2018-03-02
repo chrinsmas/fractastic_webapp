@@ -7,17 +7,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link type="text/css" rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
     <script src="p5/p5.min.js"></script>
     <script src="p5/p5.dom.min.js"></script>
     <script src="tnt_fractals/green_tree.js"></script>
 
 </head>
 
-<body id ="fractalbody">
+<body>
 
 <div id="main">
-    <div class= "w3-sidebar w3-black w3-bar-block" >
+    <div id = "sideBarFractal" class= "w3-sidebar w3-black w3-bar-block" >
+      <div class="w3-row" id="inputs">
         <div class="user_input" style="text-align: center">
              <div class="input">
                  Branch Angle
@@ -41,6 +42,7 @@
              </div>
         </div>
         <button class="w3-bar-item w3-button" onclick="saveImage()">Save Image</button>
+      </div>
    </div>
 
     <div class="w3-container" >
@@ -66,7 +68,7 @@
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
                   <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
                     <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
-                    <a href="tree.html" class="w3-bar-item w3-button">Tree</a>
+                    <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
                     <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
                 </div>
             </div>
@@ -74,10 +76,9 @@
             <a href="fractal_team.html" class="w3-bar-item w3-button">Fractal Team</a>
         </div>
     </div>
-
 </div>
-
 <div id='fractalTree'></div>
+
 </body>
 <script>
     function myFunction(demo) {

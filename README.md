@@ -7,4 +7,4 @@ Team Members:
   * Keith: [qubitrot](http://github.com/qubitrot)
   * Stacie: [stacima](http://github.com/staciema)
 
-Testing Website: https://fractastic.herokuapp.com/
+Testing website: https://fractastic.herokuapp.com/

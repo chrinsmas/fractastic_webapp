@@ -6,18 +6,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link type="text/css" rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="css/styles.css">
     <script src="p5/p5.min.js"></script>
     <script src="p5/p5.dom.min.js"></script>
     <script src="tnt_fractals/sierpinski_triangle.js"></script>
     <script src="tnt_fractals/sierpinski_triangle_sketch.js"></script>
 </head>
 
-<body id ="fractalbody">
+<body>
 
 <div id="main">
 
-    <div class= "w3-sidebar w3-black w3-bar-block" >
+    <div id = "sideBarFractal" class= "w3-sidebar w3-black w3-bar-block" >
         <button class="w3-bar-item w3-button" onclick="generate()">Draw More</button>
         <button class="w3-bar-item w3-button" onclick="resetSketch()">Reset</button>
         <button class="w3-bar-item w3-button" onclick="saveImage()">Save</button>
