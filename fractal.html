@@ -7,21 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link type="text/css" rel="stylesheet" href="css/styles.css">
-    <link rel="import" href="mainNav.html">
+    
 
 </head>
 
 <body class="homePage">
-    <!--Importing website navigation bar -->
-    <script>
-        var link = document.querySelector('link[rel="import"]');
-        var content = link.import;
-
-
-        var el = content.querySelector('.w3-container');
-
-        document.body.appendChild(el.cloneNode(true));
-    </script>
+  <div class="w3-container" >
+  <div class="w3-bar w3-black" >
+      <a href="fractal.html" class="w3-bar-item w3-button w3-hide-small">Home</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-button w3-hide-small">Fractals</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+              <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
+              <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
+              <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
+              <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
+          </div>
+      </div>
+      <a href="wiki.html" class="w3-bar-item w3-button w3-hide-small">Fractal Wiki</a>
+      <a href="fractal_team.html" class="w3-bar-item w3-button w3-hide-small">Fractal Team</a>
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="myFunction(demo)">&#9776;</a>
+  </div>
+  <div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium" >
+      <a href="fractal.html" class="w3-bar-item w3-button">Home</a>
+      <div class="w3-dropdown-hover">
+          <button class="w3-button">Fractals</button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+              <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
+              <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
+              <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
+              <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
+          </div>
+      </div>
+      <a href="wiki.html" class="w3-bar-item w3-button">Fractal Wiki</a>
+      <a href="fractal_team.html" class="w3-bar-item w3-button">Fractal Team</a>
+  </div>
+</div>
 
     <div class="w3-container">
         <div class="w3-panel w3-center w3-light-grey   " style="margin:20%">
