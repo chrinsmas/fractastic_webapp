@@ -88,12 +88,21 @@
             canvas1.width  = document.body.clientWidth*.75;
             canvas1.height = document.body.clientHeight-38;
             console.log("Canvas scaled to "+canvas1.width+" x "+canvas1.height);
-            var spec = {canvas: canvas1};
+
+            var spec = {canvas: canvas1,
+                        view_scale: 6,
+                        view_center: [0,0],
+                        max_iter: 1000};
             var mandelbrot = new MandelbrotRenderer(spec);
 
             mandelbrot.render();
 
-
+            canvas1.addEventListener('wheel',
+                function(e) {
+                    mandelbrot.zoom_to_mouse(e);
+                    e.preventDefault();
+                },
+                false);
         </script>
 
 

@@ -101,7 +101,12 @@
 
             julia.render();
 
-
+            canvas1.addEventListener('wheel',
+                function(e) {
+                    julia.zoom_to_mouse(e);
+                    e.preventDefault();
+                },
+                false);
         </script>
 
 
