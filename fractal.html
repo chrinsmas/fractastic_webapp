@@ -1,112 +1,41 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Graphing Fractels</title>
+    <title>Home</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link type="text/css" rel="stylesheet" href="styles.css">
-    <script src="jscolor.js"></script>
-    <script src="pwcp_fractals/pwcp_fractal.js"></script>
-    <script src="pwcp_fractals/mandelbrot.js"></script>
-    <script src="pwcp_fractals/julia.js"></script>
+    <link rel="import" href="mainNav.html">
+
 </head>
 
-<body>
+<body class="homePage">
+    <!--Importing website navigation bar -->
+    <script>
+        var link = document.querySelector('link[rel="import"]');
+        var content = link.import;
 
 
-<div id="main">
-    <div id = "sideBarFractal" class= "w3-sidebar w3-black w3-bar-block" >
+        var el = content.querySelector('.w3-container');
 
-        <div class="slidecontainer">
-            <input type="range" min="1" max="1000" value="500" class="slider" id="myRange" >
-            <p>Iterations: <span id="demo1"></span></p>
-            <script>
-                var slider = document.getElementById("myRange");
-                var output = document.getElementById("demo1");
-                output.innerHTML = slider.value;
+        document.body.appendChild(el.cloneNode(true));
+    </script>
 
-                slider.oninput = function() {
-                    output.innerHTML = this.value;
-                }
-            </script>
-
+    <div class="w3-container">
+        <div class="w3-panel w3-center w3-light-grey   " style="margin:20%">
+            <h1>Welcome to the Wonderful World of Fractals</h1>
         </div>
-
-
-        <input class="jscolor" id="color1" value="ab2567">
-        <p >Color 1</p>
-
-        <input class="jscolor"  id="color2"  value="ab2567">
-        <p >Color 2</p>
-        <input class="jscolor"  id="color3"  value="ab2567">
-        <p>Color 3</p>
-
-        <a href="#" class="w3-bar-item w3-button">Save Image</a>
-
-
-    </div>
-    <div class="w3-container" >
-        <div class="w3-bar w3-black" >
-            <a href="fractal.html" class="w3-bar-item w3-button w3-hide-small">Home</a>
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-button w3-hide-small">Fractals</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
-                    <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
-                    <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
-                    <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
-                </div>
-            </div>
-            <a href="wiki.html" class="w3-bar-item w3-button w3-hide-small">Fractal Wiki</a>
-            <a href="fractalteam.html" class="w3-bar-item w3-button w3-hide-small">Fractal Team</a>
-            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="myFunction(demo)">&#9776;</a>
-        </div>
-        <div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium" >
-            <a href="fractal.html" class="w3-bar-item w3-button">Home</a>
-            <div class="w3-dropdown-hover">
-                <button class="w3-button">Fractals</button>
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
-                    <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
-                    <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
-                    <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
-                </div>
-            </div>
-            <a href="wiki.html" class="w3-bar-item w3-button">Fractal Wiki</a>
-            <a href="fractalteam.html" class="w3-bar-item w3-button">Fractal Team</a>
-        </div>
-    </div>
-
-
-    <div id="canvasContainer" class="w3-container" >
-        <canvas  id="fractal_canvas"></canvas>
-        <script>
-            var canvas1 = document.getElementById("fractal_canvas");
-            canvas1.width  = document.body.clientWidth*.75;
-            canvas1.height = document.body.clientHeight-38;
-            console.log("Canvas scaled to "+canvas1.width+" x "+canvas1.height);
-            var spec = {canvas: canvas1};
-            var mandelbrot = new MandelbrotRenderer(spec);
-
-            mandelbrot.render();
-
-
-        </script>
-
 
     </div>
 
 
 
 
-
-</div>
 </body>
 <script>
-    function myFunction(demo) {
+    function myFunction() {
         var x = document.getElementById("demo");
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
@@ -116,5 +45,5 @@
     }
 </script>
 
-</html>
 
+</html>

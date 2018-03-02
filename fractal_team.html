@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fractal Team</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="import" href="mainNav.html">
+</head>
+
+<body style ="background-color: white;" >
+
+
+    <!--Importing website navigation bar -->
+    <script>
+        var link = document.querySelector('link[rel="import"]');
+        var content = link.import;
+
+
+        var el = content.querySelector('.w3-container');
+
+        document.body.appendChild(el.cloneNode(true));
+    </script>
+    <div class="w3-container">
+        <div class="w3-panel w3-center w3-light-grey   " style="margin-bottom:5%">
+            <h1>Who are we?</h1>
+        </div>
+        <div class="w3-row">
+
+                <div class="w3-card-4 w3-center w3-light-grey" id = "graceCard" >
+
+                    <div id ="teamContainer"class="w3-container w3-center" style="margin-bottom: 5%">
+                        <p style="text-align: center">We are Grace, Keith and Stacie. A group of people passionate about fractals and education. This webiste serves to educate students on what fractals are and how they are used in science and technology.   We are currently in Lift-off program from LanuchCode. Please check out our Github!</p>
+                        <a href="https://github.com/qubitrot/fractastic/wiki"  target="_blank" class="w3-bar-item w3-button" style="font-size:2em"> <i class="fa fa-github-alt"></i></a>
+                    </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="w3-container w3-light-grey w3-center" style="margin-bottom: 0%; bottom: 0">
+        <p>A special thanks to Loren and Ben at <a href="https://www.launchcode.org/all-in-tech" target="_blank">Launch Code</a></p>
+    </footer>
+
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("demo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+
+</html>
+
