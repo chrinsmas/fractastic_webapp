@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link type="text/css" rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="quiz_js/julia_quiz.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/styles.css">
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../quiz_js/tree_quiz.js"></script>
 </head>
 
 <body style ="background-color: white;">
@@ -18,7 +17,7 @@
 <div id="main">
     <div class= "w3-sidebar w3-black w3-bar-block "  id ="sideBarWiki">
 
-        <a href="wiki.html" class="w3-bar-item w3-button" id ="buttonTest1">Fractals</a>
+        <a href="../wiki.html" class="w3-bar-item w3-button" id ="buttonTest1">Fractals</a>
         <a href="wiki_mandelbrot.html" class="w3-bar-item w3-button"id ="buttonTest2">Mandelbrot</a>
         <a href="wiki_julia.html" class="w3-bar-item w3-button "id ="buttonTest3">Julia</a>
         <a href="wiki_tree.html" class="w3-bar-item w3-button"id ="buttonTest4">Tree</a>
@@ -31,35 +30,35 @@
     <div class="w3-container" >
 
         <div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium" >
-            <a href="fractal.html" class="w3-bar-item w3-button">Home</a>
+            <a href="../fractal.html" class="w3-bar-item w3-button">Home</a>
             <div class="w3-dropdown-hover">
                 <button class="w3-button">Fractals</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
-                    <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
-                    <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
-                    <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
+                    <a href="../mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
+                    <a href="../julia.html" class="w3-bar-item w3-button">Julia</a>
+                    <a href="../tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
+                    <a href="../sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
 
                 </div>
             </div>
-            <a href="wiki.html" class="w3-bar-item w3-button">Fractal Wiki</a>
-            <a href="fractal_team.html" class="w3-bar-item w3-button">Fractal Team</a>
+            <a href="../wiki.html" class="w3-bar-item w3-button">Fractal Wiki</a>
+            <a href="../fractal_team.html" class="w3-bar-item w3-button">Fractal Team</a>
         </div>
         <div class="w3-bar w3-black" >
 
-            <a href="fractal.html" class="w3-bar-item w3-button w3-hide-small">Home</a>
+            <a href="../fractal.html" class="w3-bar-item w3-button w3-hide-small">Home</a>
             <div class="w3-dropdown-hover w3-hide-small">
                 <button class="w3-button w3-hide-small">Fractals</button>
                 <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
-                    <a href="julia.html" class="w3-bar-item w3-button">Julia</a>
-                    <a href="tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
-                    <a href="sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
+                    <a href="../mandelbrot.html" class="w3-bar-item w3-button">Mandelbrot</a>
+                    <a href="../julia.html" class="w3-bar-item w3-button">Julia</a>
+                    <a href="../tree_fractal.html" class="w3-bar-item w3-button">Tree</a>
+                    <a href="../sierpinski_triangle.html" class="w3-bar-item w3-button">Sierpinski Triangle</a>
 
                 </div>
             </div>
-            <a href="wiki.html" class="w3-bar-item w3-button w3-hide-small">Fractal Wiki</a>
-            <a href="fractal_team.html" class="w3-bar-item w3-button w3-hide-small">Fractal Team</a>
+            <a href="../wiki.html" class="w3-bar-item w3-button w3-hide-small">Fractal Wiki</a>
+            <a href="../fractal_team.html" class="w3-bar-item w3-button w3-hide-small">Fractal Team</a>
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
 
 
@@ -67,14 +66,13 @@
     </div>
 
     <div id = "wikiContainer"class="w3-container" >
-
         <div class="w3-panel w3-center w3-light-grey ">
-            <h1>Julia Fractal</h1>
+            <h1>Tree Fractal</h1>
         </div>
         <div class="w3-row w3-center ">
             <div class=" w3-container w3-center ">
                 <div class="w3-card w3-light-grey w3-center" id="singleCard">
-                    <img src="img/julia_fractal.png" class = "singleImg">
+                    <img src="../img/tree_fractal.png" class = "singleImg">
                 </div>
             </div>
 
@@ -94,10 +92,10 @@
         </div>
         <div id ="wikiButtonContainer" class="w3-container w3-center">
 
-          <button class="w3-bar-item w3-button w3-center w3-dark-grey"
-          onclick ="showFunction()">Take a Quiz</button>
-          <br /><br />
-          <div id = "frame" role = "content" style="display:none;">
+            <button class="w3-bar-item w3-button w3-center w3-dark-grey"
+            onclick ="showFunction()">Take a Quiz</button>
+            <br /><br />
+            <div id = "frame" role = "content" style="display:none;">
         </div>
 
     </div>
@@ -118,7 +116,7 @@
 </script>
 
 <script>
-// Quiz show/hide
+  // Quiz show/hide
   function showFunction() {
     var show = document.getElementById("frame");
       if (show.style.display === "none") {

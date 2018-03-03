@@ -3,7 +3,7 @@ var quiztitle = "Mandelbrot Set Quiz";
 var quiz = [
        {
            "question" : "Q1: Question? ** Guys: Quiz without images okay too **",
-           "image" : "img/raccoon_placeholder.jpg",
+           "image" : "../img/raccoon_placeholder.jpg",
            "choices" : [
                                    "Wrong Answer",
                                    "Wrong Answer",
@@ -15,7 +15,7 @@ var quiz = [
        },
        {
            "question" : "Q2: Question?",
-           "image" : "img/raccoon_placeholder.jpg",
+           "image" : "../img/raccoon_placeholder.jpg",
            "choices" : [
                                    "Wrong Answer",
                                    "Wrong Answer",
@@ -27,7 +27,7 @@ var quiz = [
        },
        {
            "question" : "Q3: Question?",
-           "image" : "img/raccoon_placeholder.jpg",
+           "image" : "../img/raccoon_placeholder.jpg",
            "choices" : [
                                    "Wrong Answer",
                                    "Wrong Answer",
