@@ -15,6 +15,12 @@ class MandelbrotRenderer extends PointwiseCPFractalRenderer
         super(spec); //call PointwiseCPFractalRenderer constructor
     }
 
+    set exterior_colors(colors) {
+        this.frags_src = MandelbrotRenderer.create_frags_src(colors);
+        this.gl_program = this.build_program(this.vertexs_src,
+                                             this.frags_src);
+    }
+
     static create_frags_src(exterior_colors) 
     {
         let iterate = `

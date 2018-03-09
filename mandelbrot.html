@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link type="text/css" rel="stylesheet" href="css/styles.css">
-    <script src="jscolor.js"></script>
+    <script src="jscolor.min.js"></script>
     <script src="pwcp_fractals/pwcp_fractal.js"></script>
     <script src="pwcp_fractals/mandelbrot.js"></script>
     <script src="pwcp_fractals/julia.js"></script>
@@ -35,14 +35,10 @@
 
         </div>
 
-
-        <input class="jscolor" id="color1" value="ab2567">
-        <p >Color 1</p>
-
-        <input class="jscolor"  id="color2"  value="ab2567">
-        <p >Color 2</p>
-        <input class="jscolor"  id="color3"  value="ab2567">
-        <p>Color 3</p>
+        <input id="interp_steps" value="1">
+        <input class="jscolor colors" value="ab2567">
+        <input class="jscolor colors" value="ab2567">
+        <input class="jscolor colors" value="ab2567">
 
         <a href="#" class="w3-bar-item w3-button">Save Image</a>
 
@@ -80,9 +76,33 @@
         </div>
     </div>
 
-
     <div id="canvasContainer" class="w3-container" >
         <canvas  id="fractal_canvas"></canvas>
+        <script>
+            /**
+             * A linear interpolator for hexadecimal colors
+             * @param {String} a
+             * @param {String} b
+             * @param {Number} amount
+             * @example
+             * // returns #7F7F7F
+             * lerpColor('#000000', '#ffffff', 0.5)
+             * @returns {String}
+             */
+            function lerpColor(a, b, amount) { 
+                var ah = parseInt(a.replace(/#/g, ''), 16),
+                    ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
+                    bh = parseInt(b.replace(/#/g, ''), 16),
+                    br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff,
+                    rr = ar + amount * (br - ar),
+                    rg = ag + amount * (bg - ag),
+                    rb = ab + amount * (bb - ab);
+
+                return '#' + ((1 << 24) + (rr << 16) + (rg << 8) 
+                           + rb | 0).toString(16).slice(1);
+            } 
+        </script>
+
         <script>
             var canvas1 = document.getElementById("fractal_canvas");
             canvas1.width  = document.body.clientWidth*.75;
@@ -94,9 +114,46 @@
                         view_center: [0,0],
                         max_iter: 1000};
             var mandelbrot = new MandelbrotRenderer(spec);
-
             mandelbrot.render();
 
+            var colors = document.getElementsByClassName("colors");
+            var interp_steps = document.getElementById("interp_steps");
+
+            let gencolors = function(interps) {
+                let out = [colors[0].value];
+                for (let i=1; i<colors.length; ++i) {
+                    for (let j=0; j<interps; ++j) {
+                        out.push(
+                            lerpColor(colors[i-1].value, 
+                                      colors[i].value, 
+                                      j/interps)
+                        );
+                    }
+                    out.push(colors[i].value);
+                }
+                for (let j=0; j<interps; ++j) {
+                    out.push(
+                        lerpColor(colors[colors.length-1].value, 
+                                  colors[0].value, 
+                                  j/interps)
+                    );
+                }
+
+                return out;
+            }
+            
+            interp_steps.onchange = function() {
+                mandelbrot.exterior_colors = gencolors(interp_steps.value);
+                mandelbrot.render();
+            }
+
+            for (let c of colors) {
+                c.onchange = function() {
+                    mandelbrot.exterior_colors = gencolors(interp_steps.value);
+                    mandelbrot.render();
+                }
+            }
+            
             canvas1.addEventListener('wheel',
                 function(e) {
                     mandelbrot.zoom_to_mouse(e);
@@ -104,13 +161,7 @@
                 },
                 false);
         </script>
-
-
     </div>
-
-
-
-
 
 </div>
 </body>

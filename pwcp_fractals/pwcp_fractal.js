@@ -76,8 +76,6 @@ class PointwiseCPFractalRenderer extends FractalRenderer
         this.gl         = this.init_gl();
         this.gl_program = this.build_program(this.vertexs_src,
                                              this.frags_src);
-
-        console.log(this.frags_src);
     }
 
     render() {
