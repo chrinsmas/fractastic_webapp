@@ -25,18 +25,18 @@ var quiz = [
          "correct" : "Romanesco broccoli",
          "explanation" : "Correct Answer is Romanesco broccoli. Romanesco broccoli is a spiral fractal.",
      },
-     // {
-     //     "question" : "Q3: Question?",
-     //     "image" : "../img/raccoon_placeholder.jpg",
-     //     "choices" : [
-     //                             "Wrong Answer",
-     //                             "Wrong Answer",
-     //                             "Correct Answer",
-     //                             "Wrong Answer"
-     //                         ],
-     //     "correct" : "Correct Answer",
-     //     "explanation" : "Correct Answer is 3.",
-     // },
+     {
+         "question" : "Q3: What is the first step in branching tree rule?",
+         "image" : "../img/tree_fractal.png",
+         "choices" : [
+                                 "A sprout comes out of the ground",
+                                 "Split into branches",
+                                 "Draw smaller branches",
+                                 "Color green at the end of branches"
+                             ],
+         "correct" : "A sprout comes out of the ground",
+         "explanation" : "Correct Answer is A sprout comes out of the ground.",
+     },
 ];
 
 var currentquestion = 0,
