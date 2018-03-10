@@ -15,7 +15,7 @@ var quiz = [
        },
        {
              "question" : "Q2: What is the initial value for z in the iterative map?",
-             "image" : "../img/raccoon_placeholder.jpg",
+             //"image" : "../img/raccoon_placeholder.jpg",
              "choices" : [
                                      "0",
                                      "1",
@@ -27,7 +27,7 @@ var quiz = [
        },
        {
              "question" : "Q3: Is the constant c a fixed parameter, or does it vary in different parts of the set?",
-             "image" : "../img/raccoon_placeholder.jpg",
+             //"image" : "../img/raccoon_placeholder.jpg",
              "choices" : [
                                      "Fixed",
                                      "Varied"
