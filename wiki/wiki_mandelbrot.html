@@ -10,6 +10,7 @@
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/jquery-1.10.2.js"></script>
     <script src="../quiz_js/mandelbrot_quiz.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 
 <body style ="background-color: white;">
@@ -41,7 +42,7 @@
         <div class="w3-panel w3-center w3-light-grey ">
             <h1>Mandelbrot Fractal</h1>
         </div>
-        
+
         <div class="w3-row w3-center ">
             <div class=" w3-container w3-center ">
                 <div class="w3-card w3-light-grey w3-center" id="singleCard">
@@ -51,16 +52,12 @@
 
         </div>
         <div id = "wikiExplain" class="w3-container" >
-            <p>
-                Corndog08 May 2014
-                Donuts
-                Donuts, donuts, donuts, donuts,
-                donuts, donuts, donuts, donuts,
-                donuts, donuts, donuts, donuts,
-                donuts, donuts, donuts, donuts,
-                donuts, donuts, donuts, donuts,
-                donuts, donuts, donuts, donuts.
-                </p>
+            <p> Pick an arbitrary complex number c. Now let's consider the map,
+                $$z \rightarrow z^2 + c$$
+                If we start with z = 0, what happens to z under repeated iteration?<br /><br />
+                The Mandelbrot Set is defined as the set of complex numbers c for which z remains bounded under iteration of the map. That is, there exists a real number M such that
+                $$\mid z\mid < M$$
+                for all steps in the iteration.</p>
 
         </div>
 

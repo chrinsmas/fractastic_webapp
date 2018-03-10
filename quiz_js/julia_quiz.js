@@ -1,41 +1,39 @@
 var quiztitle = "Julia Set Quiz";
 
 var quiz = [
-       {
-           "question" : "Q1: Question? ** Guys: Quiz without images okay too **",
-           "image" : "../img/raccoon_placeholder.jpg",
-           "choices" : [
-                                   "Wrong Answer",
-                                   "Wrong Answer",
-                                   "Correct Answer",
-                                   "Wrong Answer"
-                               ],
-           "correct" : "Correct Answer",
-           "explanation" : "Correct Answer is 3.",
+         {
+             "question" : "Q1: What is a type of fractal that Mandelbrot fractal is known as?",
+             "image" : "../img/quiz_img/tree_quiz1.png",
+             "choices" : [
+                                     "Branching fractal",
+                                     "Spiral fractal",
+                                     "Quadric fractal",
+                                     "Geometric fractal"
+                                 ],
+             "correct" : "Quadric fractal",
+             "explanation" : "Correct Answer is Quadric fractal.",
        },
        {
-           "question" : "Q2: Question?",
-           "image" : "../img/raccoon_placeholder.jpg",
-           "choices" : [
-                                   "Wrong Answer",
-                                   "Wrong Answer",
-                                   "Correct Answer",
-                                   "Wrong Answer"
-                               ],
-           "correct" : "Correct Answer",
-           "explanation" : "Correct Answer is 3.",
+             "question" : "Q2: What is the initial value for z in the iterative map?",
+             "image" : "../img/raccoon_placeholder.jpg",
+             "choices" : [
+                                     "0",
+                                     "1",
+                                     "Pi",
+                                     "c"
+                                 ],
+             "correct" : "c",
+             "explanation" : "Correct Answer is c.",
        },
        {
-           "question" : "Q3: Question?",
-           "image" : "../img/raccoon_placeholder.jpg",
-           "choices" : [
-                                   "Wrong Answer",
-                                   "Wrong Answer",
-                                   "Correct Answer",
-                                   "Wrong Answer"
-                               ],
-           "correct" : "Correct Answer",
-           "explanation" : "Correct Answer is 3.",
+             "question" : "Q3: Is the constant c a fixed parameter, or does it vary in different parts of the set?",
+             "image" : "../img/raccoon_placeholder.jpg",
+             "choices" : [
+                                     "Fixed",
+                                     "Varied"
+                                 ],
+             "correct" : "Fixed",
+             "explanation" : "Correct Answer is Fixed.",
        },
 
 

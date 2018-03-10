@@ -2,40 +2,38 @@ var quiztitle = "Mandelbrot Set Quiz";
 
 var quiz = [
        {
-           "question" : "Q1: Question? ** Guys: Quiz without images okay too **",
-           "image" : "../img/raccoon_placeholder.jpg",
+           "question" : "Q1: What is a type of fractal that Mandelbrot fractal is known as?",
+           "image" : "../img/quiz_img/tree_quiz1.png",
            "choices" : [
-                                   "Wrong Answer",
-                                   "Wrong Answer",
-                                   "Correct Answer",
-                                   "Wrong Answer"
+                                   "Branching fractal",
+                                   "Spiral fractal",
+                                   "Quadric fractal",
+                                   "Geometric fractal"
                                ],
-           "correct" : "Correct Answer",
-           "explanation" : "Correct Answer is 3.",
+           "correct" : "Quadric fractal",
+           "explanation" : "Correct Answer is Quadric fractal.",
        },
        {
-           "question" : "Q2: Question?",
+           "question" : "Q2: What is the initial value for z in the iterative map?",
            "image" : "../img/raccoon_placeholder.jpg",
            "choices" : [
-                                   "Wrong Answer",
-                                   "Wrong Answer",
-                                   "Correct Answer",
-                                   "Wrong Answer"
+                                   "0",
+                                   "1",
+                                   "Pi",
+                                   "c"
                                ],
-           "correct" : "Correct Answer",
-           "explanation" : "Correct Answer is 3.",
+           "correct" : "0",
+           "explanation" : "Correct Answer is 0.",
        },
        {
-           "question" : "Q3: Question?",
+           "question" : "Q3: Consider c = 0, is the point z = 1 in the mandelbrot set?",
            "image" : "../img/raccoon_placeholder.jpg",
            "choices" : [
-                                   "Wrong Answer",
-                                   "Wrong Answer",
-                                   "Correct Answer",
-                                   "Wrong Answer"
+                                   "Yes",
+                                   "No"
                                ],
-           "correct" : "Correct Answer",
-           "explanation" : "Correct Answer is 3.",
+           "correct" : "Yes",
+           "explanation" : "Correct Answer is Yes.",
        },
 
 
