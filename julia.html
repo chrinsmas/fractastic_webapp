@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link type="text/css" rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-1.10.2.js"></script>
-    <script src="jscolor.min.js"></script>
+    <script src="js/jscolor.min.js"></script>
     <script src="pwcp_fractals/pwcp_fractal.js"></script>
     <script src="pwcp_fractals/mandelbrot.js"></script>
     <script src="pwcp_fractals/julia.js"></script>
@@ -28,11 +28,13 @@
 
         Max Iterations: <input id="max_iter" value="500">
         Interpolations: <input id="interp_steps" value="10">
+        <br />
+        Colors:<br />
         <input class="jscolor colors" value="4F8842">
         <input class="jscolor colors" value="CDFF72">
         <input class="jscolor colors" value="F5F6B5">
 
-        <a href="#" class="w3-bar-item w3-button">Save Image</a>
+        <a href="#" class="w3-bar-item w3-button" download="julia.png" id="btn-download">Save Image</a>
     </div>
 
     <div class="w3-container" id="mainWebsiteNav">
@@ -57,7 +59,7 @@
              * lerpColor('#000000', '#ffffff', 0.5)
              * @returns {String}
              */
-            function lerpColor(a, b, amount) { 
+            function lerpColor(a, b, amount) {
                 var ah = parseInt(a.replace(/#/g, ''), 16),
                     ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
                     bh = parseInt(b.replace(/#/g, ''), 16),
@@ -66,9 +68,9 @@
                     rg = ag + amount * (bg - ag),
                     rb = ab + amount * (bb - ab);
 
-                return '#' + ((1 << 24) + (rr << 16) + (rg << 8) 
+                return '#' + ((1 << 24) + (rr << 16) + (rg << 8)
                            + rb | 0).toString(16).slice(1);
-            } 
+            }
         </script>
 
         <script>
@@ -76,6 +78,8 @@
             canvas1.width  = document.body.clientWidth*.75;
             canvas1.height = document.body.clientHeight-38;
             console.log("Canvas scaled to "+canvas1.width+" x "+canvas1.height);
+            const anchor = document.querySelector('a');
+            const fileName = `julia.png`;
 
             var spec = {canvas: canvas1,
                         c: [-0.49,0.6],
@@ -92,8 +96,8 @@
                 for (let i=1; i<colors.length; ++i) {
                     for (let j=0; j<interps; ++j) {
                         out.push(
-                            lerpColor(colors[i-1].value, 
-                                      colors[i].value, 
+                            lerpColor(colors[i-1].value,
+                                      colors[i].value,
                                       j/interps)
                         );
                     }
@@ -101,15 +105,15 @@
                 }
                 for (let j=0; j<interps; ++j) {
                     out.push(
-                        lerpColor(colors[colors.length-1].value, 
-                                  colors[0].value, 
+                        lerpColor(colors[colors.length-1].value,
+                                  colors[0].value,
                                   j/interps)
                     );
                 }
 
                 return out;
             }
-            
+
             interp_steps.onchange = function() {
                 fractal.exterior_colors = gencolors(interp_steps.value);
                 fractal.render();
@@ -134,14 +138,14 @@
                 fractal.c[1] = c_imag.value;
                 fractal.render();
             }
-           
+
             let max_iter = document.getElementById("max_iter");
             max_iter.onchange = function() {
                 fractal.max_iter = max_iter.value;
                 fractal.exterior_colors = gencolors(interp_steps.value);
                 fractal.render();
             }
-            
+
             canvas1.addEventListener('wheel',
                 function(e) {
                     fractal.zoom_to_mouse(e);
@@ -151,7 +155,15 @@
 
             fractal.exterior_colors = gencolors(interp_steps.value);
             fractal.render();
+
+            var button = document.getElementById('btn-download');
+            button.addEventListener('click', function (e) {
+                var dataURL = canvas.toDataURL('image/png');
+                button.href = dataURL;
+            })
         </script>
+
+
 
     </div>
 
@@ -159,14 +171,17 @@
 </body>
 
 <script>
-    function myFunction(demo) {
-        var x = document.getElementById("demo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
+function myFunction(demo) {
+    var x = document.getElementById("demo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
     }
+}
 </script>
 
+<script>
+
+</script>
 </html>

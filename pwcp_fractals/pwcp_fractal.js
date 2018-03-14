@@ -71,7 +71,7 @@ class PointwiseCPFractalRenderer extends FractalRenderer
         if (!this.frags_src) {
             throw "from PointwiseCPFractalRenderer.constructor(): \
                    spec did not include source code for a fragment shader";
-        }   
+        }
 
         this.gl         = this.init_gl();
         this.gl_program = this.build_program(this.vertexs_src,
@@ -190,7 +190,7 @@ class PointwiseCPFractalRenderer extends FractalRenderer
     }
 
     init_gl() {
-        var gl = this.canvas.getContext("webgl");
+        var gl = this.canvas.getContext("webgl", {preserveDrawingBuffer: true});
         if (!gl) {
             alert("ERROR: unable to get WebGL context");
         }
