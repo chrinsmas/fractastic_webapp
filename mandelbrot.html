@@ -35,13 +35,13 @@
 
         </div>
 
-        <input id="interp_steps" value="1">
-        <input class="jscolor colors" value="ab2567">
-        <input class="jscolor colors" value="ab2567">
-        <input class="jscolor colors" value="ab2567">
+        Max Iterations: <input id="max_iter" value="500">
+        Interpolations: <input id="interp_steps" value="10">
+        <input class="jscolor colors" value="EFFFD1">
+        <input class="jscolor colors" value="1FFFC6">
+        <input class="jscolor colors" value="114145">
 
         <a href="#" class="w3-bar-item w3-button">Save Image</a>
-
 
     </div>
     <div class="w3-container" >
@@ -113,8 +113,7 @@
                         view_scale: 6,
                         view_center: [0,0],
                         max_iter: 1000};
-            var mandelbrot = new MandelbrotRenderer(spec);
-            mandelbrot.render();
+            var fractal = new MandelbrotRenderer(spec);
 
             var colors = document.getElementsByClassName("colors");
             var interp_steps = document.getElementById("interp_steps");
@@ -143,23 +142,33 @@
             }
             
             interp_steps.onchange = function() {
-                mandelbrot.exterior_colors = gencolors(interp_steps.value);
-                mandelbrot.render();
+                fractal.exterior_colors = gencolors(interp_steps.value);
+                fractal.render();
             }
 
             for (let c of colors) {
                 c.onchange = function() {
-                    mandelbrot.exterior_colors = gencolors(interp_steps.value);
-                    mandelbrot.render();
+                    fractal.exterior_colors = gencolors(interp_steps.value);
+                    fractal.render();
                 }
             }
-            
+                       
+            let max_iter = document.getElementById("max_iter");
+            max_iter.onchange = function() {
+                fractal.max_iter = max_iter.value;
+                fractal.exterior_colors = gencolors(interp_steps.value);
+                fractal.render();
+            }
+
             canvas1.addEventListener('wheel',
                 function(e) {
-                    mandelbrot.zoom_to_mouse(e);
+                    fractal.zoom_to_mouse(e);
                     e.preventDefault();
                 },
                 false);
+
+            fractal.exterior_colors = gencolors(interp_steps.value);
+            fractal.render();
         </script>
     </div>
 
