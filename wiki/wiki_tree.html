@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Graphing Fractels</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link type="text/css" rel="stylesheet" href="../css/styles.css">
+    <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../js/jquery-1.10.2.js"></script>
+    <script src="../quiz_js/tree_quiz.js"></script>
+</head>
+
+<body style ="background-color: white;">
+
+
+<div id="main">
+
+    <div class= "w3-sidebar w3-black w3-bar-block"  id ="sideBarWiki">
+
+    </div>
+    <script>
+        $(function(){
+            $("#sideBarWiki").load("wikiNav.html");
+        });
+    </script>
+
+    <div class="w3-container" id="mainWebsiteNav">
+
+    </div>
+    <script>
+        $(function(){
+            $("#mainWebsiteNav").load("/mainNav.html");
+        });
+    </script>
+
+
+    <div id = "wikiContainer"class="w3-container" >
+        <div class="w3-panel w3-center w3-light-grey ">
+            <h1>Tree Fractal</h1>
+        </div>
+        <div class="w3-row w3-center ">
+            <div class=" w3-container w3-center ">
+                <div class="w3-card w3-light-grey w3-center" id="singleCard">
+                    <img src="../img/tree_fractal.png" class = "singleImg">
+                </div>
+            </div>
+
+        </div>
+        <div id = "wikiExplain" class="w3-container" >
+            <p>
+              Many natural phenomena are fractal to some degree. Tree fractal is also known as branching fractal. It can be found in trees, lungs, rivers, snow flakes and so on. There are a few things to notice about the fractal structure of a tree. First of all, a tree is approximately self-similar. That is, a small piece of the tree looks somewhat like an entire tree. Secondly, while a tree is a large, complex object, it is formed by repeating a simple process over and over again.<br /> <br />
+
+              Tree branching rules:<br /><br />
+
+            	A sprout comes out of the ground, and then splits into branches. Each of these branches then splits again into new branches, and each of these branches splits again into new branches. At each point in this process, it is as if two new, smaller trees emerge, and the new branches can be thought of as the trunks of the next generation of trees. So a large tree can be seen as a collection of many smaller trees of various sizes. Thus the repetition of branching that forms the tree also generates the tree's self-similarity.
+            </p>
+
+        </div>
+        <div id ="wikiButtonContainer" class="w3-container w3-center">
+
+            <button class="w3-bar-item w3-button w3-center w3-dark-grey"
+            onclick ="showFunction()">Take a Quiz</button>
+            <br /><br />
+            <div id = "frame" role = "content" style="display:none;">
+        </div>
+
+    </div>
+
+
+</div>
+</body>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("demo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+<script>
+  // Quiz show/hide
+  function showFunction() {
+    var show = document.getElementById("frame");
+      if (show.style.display === "none") {
+          show.style.display = "block";
+      } else {
+          show.style.display = "none";
+      }
+ }
+</script>
+
+</html>

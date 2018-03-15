@@ -49,6 +49,9 @@ class PointwiseCPFractalRenderer extends FractalRenderer
     constructor(spec) {
         super(spec); //call FractalRenderer constructor
 
+        this.escape_radius = spec.escape_radius || 2;
+        this.max_iter      = spec.max_iter      || 1000;
+
         //This generic vertex shader is all that is needed
         //for many fractals, as the
         //heavy-lifting is done by the fragment shader.
@@ -64,19 +67,15 @@ class PointwiseCPFractalRenderer extends FractalRenderer
         if (spec.vertexs_src) this.vertexs_src = spec.vertexs_src;
         else                  this.vertexs_src = generic_vertexs_src;
 
-        this.frags_src = spec.frags_src;
+        this.frags_src = spec.frags_src
         if (!this.frags_src) {
             throw "from PointwiseCPFractalRenderer.constructor(): \
                    spec did not include source code for a fragment shader";
         }
 
-        this.escape_radius = spec.escape_radius || 2;
-        this.max_iter      = spec.max_iter      || 1000;
-
         this.gl         = this.init_gl();
         this.gl_program = this.build_program(this.vertexs_src,
                                              this.frags_src);
-
     }
 
     render() {
@@ -191,7 +190,7 @@ class PointwiseCPFractalRenderer extends FractalRenderer
     }
 
     init_gl() {
-        var gl = this.canvas.getContext("webgl");
+        var gl = this.canvas.getContext("webgl", {preserveDrawingBuffer: true});
         if (!gl) {
             alert("ERROR: unable to get WebGL context");
         }
@@ -243,4 +242,35 @@ class PointwiseCPFractalRenderer extends FractalRenderer
             gl.deleteShader(shader);
         }
     }
+
+    static unrolled_color_loop(colors) {
+        function hex_to_vec4(hex) {
+            let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            let rgb = result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : null;
+            if (!rgb) return null;
+
+            let r = rgb.r / 255.0;
+            let g = rgb.g / 255.0;
+            let b = rgb.b / 255.0;
+            let vec4 = `vec4(${r},${g},${b},1)`;
+
+            return vec4;
+        }
+
+        let out = "";
+        for (let i=0; i<colors.length; ++i) {
+            let fac = 0.1*(i % 10);
+            console.log(fac);
+            out += `iterate(z,c);
+                    if (length(z) > escape_radius) {
+                        float b = exp(-0.1*sqrt(view_scale)*float(i));
+                        return vec4(b,b,b,1)*${hex_to_vec4(colors[i])};
+                    }`;
+        }
+        return out;
+    };
 }
