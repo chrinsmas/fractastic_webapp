@@ -34,7 +34,7 @@
         <input class="jscolor colors" value="CDFF72">
         <input class="jscolor colors" value="F5F6B5">
 
-        <a href="#" class="w3-bar-item w3-button" download="julia.png" id="btn-download">Save Image</a>
+        <!-- <a href="#" class="w3-bar-item w3-button" download="julia.png" id="btn-download">Save Image</a> -->
     </div>
 
     <div class="w3-container" id="mainWebsiteNav">
@@ -156,11 +156,11 @@
             fractal.exterior_colors = gencolors(interp_steps.value);
             fractal.render();
 
-            var button = document.getElementById('btn-download');
-            button.addEventListener('click', function (e) {
-                var dataURL = canvas.toDataURL('image/png');
-                button.href = dataURL;
-            })
+            // var button = document.getElementById('btn-download');
+            // button.addEventListener('click', function (e) {
+            //     var dataURL = canvas.toDataURL('image/png');
+            //     button.href = dataURL;
+            // })
         </script>
 
 
